@@ -1,0 +1,40 @@
+{
+  "name": "easydom",
+  "version": "0.0.0",
+  "description": "Simple helpers for dom manipulation that provide IE8 support",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "browserify test/main.js | testling",
+    "build": "browserify test/main.js > test/bundle.js",
+    "posttest": "killall phantomjs",
+    "pretest": "./scripts/setup.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/evanlucas/easydom.git"
+  },
+  "keywords": [
+    "dom",
+    "browser"
+  ],
+  "testling": {
+    "files": ["test/main.js"],
+    "browsers": [
+      "ie/6..latest",
+      "chrome/20..latest",
+      "firefox/10..latest",
+      "safari/latest",
+      "opera/11.0..latest",
+      "iphone/6",
+      "ipad/6"
+    ]
+  },
+  "author": "Evan Lucas <evanlucas@me.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "tape": "^2.10.2"
+  }
+}
