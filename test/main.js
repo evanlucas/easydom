@@ -8,8 +8,16 @@ test('setup', function(t) {
   dom.setText(btn, 'Click Me')
   var title = document.createElement('h1')
   title.setAttribute('class', 'theTitle')
+  var para = document.createElement('p')
+  para.setAttribute('class', 'para')
+  para.innerHTML = '<div>This is a test</div>'
+  var item = document.createElement('p')
+  item.setAttribute('class', 'full')
+  dom.setText(item, 'NAME')
   document.body.appendChild(btn)
   document.body.appendChild(title)
+  document.body.appendChild(para)
+  document.body.appendChild(item)
   t.end()
 })
 
@@ -40,5 +48,16 @@ test('remove', function(t) {
 })
 
 test('empty', function(t) {
+  var para = document.querySelector('.para')
+  dom.empty(para)
+  t.equal(para.innerHTML, '', 'Should empty innerHTML')
+  t.end()
+})
+
+test('css', function(t) {
+  var item = document.querySelector('.full')
+  dom.css(item, 'color', 'blue')
+  var color = item.style['color']
+  t.equal(color, 'blue', 'Should set color to blue')
   t.end()
 })

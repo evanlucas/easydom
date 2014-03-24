@@ -23,10 +23,32 @@ var dom = require('easydom')
 
 ### on(ele, event, fn)
 
+```js
+dom.on('.btn', 'click', function() {
+  console.log('clicked!')
+})
+```
+
 ### setText(ele, str)
+
+```js
+dom.setText('.btn', 'Click Me!!!!')
+```
 
 ### remove(ele)
 
+```js
+dom.remove('.btn')
+```
+
 ### empty(ele)
 
+```js
+dom.empty('.text')
+```
+
 ### css(ele, name, val)
+
+```js
+dom.css('.btn', 'width', '200px')
+```
